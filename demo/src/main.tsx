@@ -1,7 +1,16 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import 'mapbox-gl/dist/mapbox-gl.css';
-import 'maplibre-gl/dist/maplibre-gl.css';
-import App from './App';
+import React from "react"
+import { createRoot } from "react-dom/client"
+import "maplibre-gl/dist/maplibre-gl.css"
+import App from "./App"
 
-createRoot(document.getElementById('root')!).render(<App />);
+const rootElement = document.getElementById("root")
+
+if (!rootElement) {
+  throw new Error("Root element not found")
+}
+
+createRoot(rootElement).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
